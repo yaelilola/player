@@ -33,9 +33,16 @@ function showTip(tipJson){
 }
 // setting the click handlers for next and back buttons
 function setButtonsHandlers(){
+    $('button[data-iridize-role="closeBt"]').click(closeTips);
     $('button[data-iridize-role="prevBt"]').click(back);
     $('a[data-iridize-role="nextBt"]').click(next);
 }
+
+// handles the tips 'x' button
+function closeTips(){
+    $('div[aria-label="Steps"]').css('display','none');
+}
+
 // returns the tip preceding current tip
 function findPrevTip(){
     const currTipId =$('div[data-iridize-id="content"]').attr("step_id");
