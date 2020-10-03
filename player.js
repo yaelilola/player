@@ -30,7 +30,23 @@ function showTip(tipJson){
         $('div[data-iridize-id="content"]').html(tipJson.action.contents["#content"]); 
         $('div[data-iridize-id="content"]').attr("step_id",tipJson.id); 
     }
+    $('span[data-iridize-role="stepCount"]').html(FindTipInStepsArray(tipJson.id).index + 1);
+    $('span[data-iridize-role="stepsCount"]').html(stepsArray.length - 1);
 }
+
+function FindTipInStepsArray(tipId){
+    let tip;
+    let tip_index = 0
+    for (let i = 0 ; i < stepsArray.length ; i++){
+        const step = stepsArray[i];
+        if(step.id===tipId){
+            tip = step;
+            tip_index = i;
+        }
+    }
+    return {element: tip, index: tip_index};
+}
+
 // setting the click handlers for next and back buttons
 function setButtonsHandlers(){
     $('button[data-iridize-role="closeBt"]').click(closeTips);
@@ -72,29 +88,17 @@ function back(){
 // returns the tip following tipJson
 function findNextTip(){
     const currTipId =$('div[data-iridize-id="content"]').attr("step_id");
-    let nextTip;
-    stepsArray.forEach(step => {
-        if(step.id===currTipId){
-            if (step.followers.length !== 0){
-                const nextId = step.followers[0].next;
-                stepsArray.forEach(possibleNext => {
-                    if(possibleNext.id===nextId){
-                        nextTip = possibleNext;
-                    }
-                });
-            }
-        }
-    });
+    const currTip = FindTipInStepsArray(currTipId).element;
+    let nextTip = currTip.followers.length === 0 ? undefined : FindTipInStepsArray(currTip.followers[0].next).element;
     return nextTip;
 }
 // next button click handler
 function next(){
     const nextTipJson = findNextTip();
-    if (nextTipJson!==undefined){
-        $('a[data-iridize-role="nextBt"]').prop('disabled', false);
+    if (nextTipJson.action.type === 'tip'){
         showTip(nextTipJson);
-    } else {
-        $('a[data-iridize-role="nextBt"]').prop('disabled', true);
+    } else { // type is closeScenario (the only other type as seen in the json example)
+        closeTips();
     }
 }
 
