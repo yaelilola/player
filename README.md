@@ -26,7 +26,7 @@ Clicking on the "X" button will close the tips.
    *** clicking on the bottons is also possible using the console:
    1. To click on the 'Next' button : write in the console - $("#NextBt").click();
    2. To click on the 'Back' button : write in the console - $("#PrevBt").click();
-   3. To click on the 'Close' button : write in the console - $("#CloseBt").click();
+   3. To click on the 'Close' ('X') button : write in the console - $("#CloseBt").click();
 3. Running the tests:
   There are two options- 
    a. 1. copy and paste the content of the player_tests.js file
