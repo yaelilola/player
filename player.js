@@ -21,6 +21,7 @@ function setTips(stepsArray, tipsTemplates){
 }
 // displaying a certain tip (content and location)
 function showTip(tipJson, classesToRemove){
+    $('div[aria-label="Steps"]').css("position","relative"); /// for the buttons not to be hidden by other google page elements.
     $('div[aria-label="Steps"]').removeClass(classesToRemove);
     $('div[aria-label="Steps"]').addClass(tipJson.action.classes);
     if (findPrevTipAux(tipJson.id) === undefined){
