@@ -34,7 +34,9 @@ Clicking on the "X" button will close the tips.
   
   * using the Snippets should look like this:
   
-  <a href="https://ibb.co/99S4qFm"><img src="https://i.ibb.co/0jv9fgp/Capture.png" alt="Capture" border="0"></a>
+  <a href="https://imgbb.com/"><img src="https://i.ibb.co/jDqjCk4/Capture.png" alt="Capture" border="0"></a>
+  
+  Thank you!
   
   
   
