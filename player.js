@@ -1,3 +1,4 @@
+// var script = document.createElement('script');script.src = "https://code.jquery.com/jquery-3.4.1.min.js";document.getElementsByTagName('head')[0].appendChild(script);
 let stepsArray;
 $.getJSON("https://guidedlearning.oracle.com/player/latest/api/scenario/get/v_IlPvRLRWObwLnV5sTOaw/5szm2kaj/?callback=?",function(json){
     getCSSContent(json);
@@ -20,13 +21,14 @@ function setTips(stepsArray, tipsTemplates){
 }
 // displaying a certain tip (content and location)
 function showTip(tipJson){
+    // $('div[aria-label="Steps"]').addClass(tipJson.action.classes);
     if (findPrevTipAux(tipJson.id) === undefined){
         $('button[data-iridize-role="prevBt"]').prop('disabled', true);
     } else {
         $('button[data-iridize-role="prevBt"]').prop('disabled', false);
     }
     if (tipJson.action.contents!==undefined){
-        $('div[aria-label="Steps"]').css("float: " + tipJson.action.placement);
+        // $('div[aria-label="Steps"]').css("float", tipJson.action.placement);
         $('div[data-iridize-id="content"]').html(tipJson.action.contents["#content"]); 
         $('div[data-iridize-id="content"]').attr("step_id",tipJson.id); 
     }
@@ -34,6 +36,7 @@ function showTip(tipJson){
     $('span[data-iridize-role="stepsCount"]').html(stepsArray.length - 1);
 }
 
+// return the tip JSon that have tipId and it's index in the steps array
 function FindTipInStepsArray(tipId){
     let tip;
     let tip_index = 0
@@ -49,9 +52,12 @@ function FindTipInStepsArray(tipId){
 
 // setting the click handlers for next and back buttons
 function setButtonsHandlers(){
-    $('button[data-iridize-role="closeBt"]').click(closeTips);
-    $('button[data-iridize-role="prevBt"]').click(back);
-    $('a[data-iridize-role="nextBt"]').click(next);
+    $('a[data-iridize-role="nextBt"]').attr("id","NextBt");
+    $('button[data-iridize-role="prevBt"]').attr("id","PrevBt");
+    $('button[data-iridize-role="closeBt"]').attr("id","CloseBt");
+    $('#CloseBt').click(function () {closeTips();});
+    $('#BackBt').click(function () {back();});
+    $('#NextBt').click(function(){next();});   
 }
 
 // handles the tips 'x' button
@@ -101,5 +107,3 @@ function next(){
         closeTips();
     }
 }
-
-
