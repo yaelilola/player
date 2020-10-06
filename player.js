@@ -29,6 +29,8 @@ function showTip(tipJson){
     }
     if (tipJson.action.contents!==undefined){
         // $('div[aria-label="Steps"]').css("float", tipJson.action.placement);
+        $('div[aria-label="Steps"]').css("top","0");
+        $('div[aria-label="Steps"]').css("float", 'left');
         $('div[data-iridize-id="content"]').html(tipJson.action.contents["#content"]); 
         $('div[data-iridize-id="content"]').attr("step_id",tipJson.id); 
     }
@@ -56,7 +58,7 @@ function setButtonsHandlers(){
     $('button[data-iridize-role="prevBt"]').attr("id","PrevBt");
     $('button[data-iridize-role="closeBt"]').attr("id","CloseBt");
     $('#CloseBt').click(function () {closeTips();});
-    $('#BackBt').click(function () {back();});
+    $('#PrevBt').click(function () {back();});
     $('#NextBt').click(function(){next();});   
 }
 
