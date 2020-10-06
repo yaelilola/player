@@ -31,10 +31,11 @@ Clicking on the "X" button will close the tips.
    <a href="https://ibb.co/X7xssQY"><img src="https://i.ibb.co/bs5BB0b/Capture.png" alt="Capture" border="0"></a>
 3. Running the tests:
   There are two options- 
-   a. 1. copy and paste the content of the player_tests.js file
-      2. press "Enter" to run it
-   b. 1. in the "source" tab of the console, choose "snippets", create a new one and copy the player_tests.js file content to there.
-      2. press Ctrl+Enter to run it. 
+   1. refresh the page and run the player.js script as mentioned before
+   2. a. copy and paste the content of the player_tests.js file
+      b. press "Enter" to run it
+   3. a. in the "source" tab of the console, choose "snippets", create a new one and copy the player_tests.js file content to there.
+      b. press Ctrl+Enter to run it. 
    If the all of the tests have passed, the console will display the message "All of the tests had passed!!!", and the tips should disappear. Otherwise, it will display the message 
    "Some tests had failed. See notes above." (and there will be more log messages to display where the error occured). 
    * To run the player.js again after the tests, it is recommended to refresh the browser and repeat on the previous steps.
