@@ -5,6 +5,9 @@ This project displays a simple guided learning frontend engine, that can run on 
 main files are:
 1. player.js - the project main script
 2. player_tests.js - basic tests in order to validate the solution.
+Clicking on the "Back" button should display the previous tip (except for the first tip, for it the button is disabled).
+Clicking on the "Next" button should display the next tip (except fot the last tip, in this case clicking on the "next" button will close the tips). 
+Clicking on the "X" button will close the tips. 
 
 ### SetUp Instructions
 1. Adding jQuery: 
@@ -30,6 +33,7 @@ main files are:
    "Some tests had failed. See notes above." (and there will be more log messages to display where the error occured)
   
   * using the Snippets should look like this:
+  
   <a href="https://ibb.co/99S4qFm"><img src="https://i.ibb.co/0jv9fgp/Capture.png" alt="Capture" border="0"></a>
   
   
