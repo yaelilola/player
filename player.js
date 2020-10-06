@@ -4,7 +4,7 @@ $.getJSON("https://guidedlearning.oracle.com/player/latest/api/scenario/get/v_Il
     getCSSContent(json);
     stepsArray = json.data.structure.steps;
     setTips(stepsArray, json.data.tiplates);    
-    console.log(json);
+    console.log('done reading player.js!');
     });
 
 // adding a style element to the document's head
@@ -16,12 +16,13 @@ function setTips(stepsArray, tipsTemplates){
     const tipElement = tipsTemplates.tip;
     $(tipElement).appendTo("body");
     setButtonsHandlers();
-    showTip(stepsArray[0]);
+    showTip(stepsArray[0],"");
     
 }
 // displaying a certain tip (content and location)
-function showTip(tipJson){
-    // $('div[aria-label="Steps"]').addClass(tipJson.action.classes);
+function showTip(tipJson, classesToRemove){
+    $('div[aria-label="Steps"]').removeClass(classesToRemove);
+    $('div[aria-label="Steps"]').addClass(tipJson.action.classes);
     if (findPrevTipAux(tipJson.id) === undefined){
         $('button[data-iridize-role="prevBt"]').prop('disabled', true);
     } else {
@@ -30,7 +31,6 @@ function showTip(tipJson){
     if (tipJson.action.contents!==undefined){
         // $('div[aria-label="Steps"]').css("float", tipJson.action.placement);
         $('div[aria-label="Steps"]').css("top","0");
-        $('div[aria-label="Steps"]').css("float", 'left');
         $('div[data-iridize-id="content"]').html(tipJson.action.contents["#content"]); 
         $('div[data-iridize-id="content"]').attr("step_id",tipJson.id); 
     }
@@ -88,7 +88,7 @@ function back(){
     const prevTipJson = findPrevTip();
     if (prevTipJson!==undefined){
         $('button[data-iridize-role="prevBt"]').prop('disabled', false);
-        showTip(prevTipJson);
+        showTip(prevTipJson, $('div[aria-label="Steps"]').attr("class"));
     } else {
         $('button[data-iridize-role="prevBt"]').prop('disabled', true);
     }
@@ -104,7 +104,7 @@ function findNextTip(){
 function next(){
     const nextTipJson = findNextTip();
     if (nextTipJson.action.type === 'tip'){
-        showTip(nextTipJson);
+        showTip(nextTipJson, $('div[aria-label="Steps"]').attr("class"));
     } else { // type is closeScenario (the only other type as seen in the json example)
         closeTips();
     }

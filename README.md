@@ -22,7 +22,7 @@ Clicking on the "X" button will close the tips.
       2. press "Enter" to run it
    b. 1. in the "Sources" tab of the console, choose "Snippets", create a new one and copy the player.js file content to there.
       2. press Ctrl+Enter to run it. 
-   now tips should appear. 
+   Now tips should appear, and in the log the following message should be displayed: "done reading player.js!". 
 3. Running the tests:
   There are two options- 
    a. 1. copy and paste the content of the player_tests.js file
