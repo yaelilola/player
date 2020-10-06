@@ -6,14 +6,13 @@ function initTest(){
         if (currTipContent !== stepsArray[0].action.contents['#content']){
             console.log("Error: First step was not loaded correctly");
             return 0;
-        }
-        if (currTipStep !== "1"){
+        } if (currTipStep !== "1") {
             console.log("Error: problem with step counting");
             return 0;
+        } else {
+            return 1;
         }
-
-    }
-    else {
+    } else {
         console.log("Error: tips did not appear.");
         return 0;
     }      
@@ -47,7 +46,16 @@ function nextBtnTest(){
     }
 }
 function closeBtnTest(){
-
+    $('div[aria-label="Steps"]').css('display','block');
+    $('#CloseBt').click();
+    const display_value = $('div[aria-label="Steps"]').css('display');
+    if (display_value !== 'none'){
+        console.log("Error: clicking the 'x' button did not work.");
+        return 0;
+    }
+    else {
+        return 1;
+    }
 }
 function backBtnTest(){
 
