@@ -23,11 +23,12 @@ Clicking on the "X" button will close the tips.
    b. 1. in the "Sources" tab of the console, choose "Snippets", create a new one and copy the player.js file content to there.
       2. press Ctrl+Enter to run it. 
    Now tips should appear, and in the log the following message should be displayed: "done reading player.js!". 
-   *** Clicking on the bottons is also possible using the console:
+   * Clicking on the bottons is also possible using the console:
    1. To click on the 'Next' button : write in the console - $("#NextBt").click();
    2. To click on the 'Back' button : write in the console - $("#PrevBt").click();
    3. To click on the 'Close' ('X') button : write in the console - $("#CloseBt").click();
-   *** The code can also be examepled on other sites, such as https://www.ynet.co.il/home/0,7340,L-8,00.html (where the tips might appear in the page bottom), or when opening the file "player.html" on the browser. 
+   * The code can also be examepled on other sites, such as https://www.ynet.co.il/home/0,7340,L-8,00.html (where the tips might appear in the page bottom), or when opening the file "player.html" on the browser. 
+   <a href="https://ibb.co/X7xssQY"><img src="https://i.ibb.co/bs5BB0b/Capture.png" alt="Capture" border="0"></a>
 3. Running the tests:
   There are two options- 
    a. 1. copy and paste the content of the player_tests.js file
