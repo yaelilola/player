@@ -12,7 +12,8 @@ Clicking on the "X" button will close the tips.
 ### SetUp Instructions
 1. Adding jQuery: 
   In the Chrome DevTools Console, add the following: 
-  var script = document.createElement('script');script.src = "https://code.jquery.com/jquery-3.4.1.min.js";
+  var script = document.createElement('script');
+  script.src = "https://code.jquery.com/jquery-3.4.1.min.js";
   document.getElementsByTagName('head')[0].appendChild(script);
   It might take a few seconds to see it is okay. If it is okay, the console output for this command will be:
   <a href="https://imgbb.com/"><img src="https://i.ibb.co/gdYQXnp/Capture.png" alt="Capture" border="0"></a>
@@ -28,10 +29,9 @@ Clicking on the "X" button will close the tips.
    2. To click on the 'Back' button : write in the console - $("#PrevBt").click();
    3. To click on the 'Close' ('X') button : write in the console - $("#CloseBt").click();
    * The code can also be examepled on other sites, such as https://www.ynet.co.il/home/0,7340,L-8,00.html (where the tips might appear in the page bottom), or when opening the file "player.html" on the browser. 
-   <a href="https://ibb.co/X7xssQY"><img src="https://i.ibb.co/bs5BB0b/Capture.png" alt="Capture" border="0"></a>
 3. Running the tests:
   There are two options- 
-   1. refresh the page and run the player.js script as mentioned before
+   1. refresh the page, add the jQuery (level 1) and run the player.js script as mentioned before. 
    2. a. copy and paste the content of the player_tests.js file
       b. press "Enter" to run it
    3. a. in the "source" tab of the console, choose "snippets", create a new one and copy the player_tests.js file content to there.
