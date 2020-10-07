@@ -25,15 +25,15 @@ Clicking on the "X" button will close the tips.
 2. Running the code:
    There are two options- 
    
-   a. 1. copy and paste the content of the player.js file
+   a. i. copy and paste the content of the player.js file
    
-      2. press "Enter" to run it
+      ii. press "Enter" to run it
       
-   b. 1. in the "Sources" tab of the console, choose "Snippets", create a new one and copy the player.js file content to there.
+   b. i. in the "Sources" tab of the console, choose "Snippets", create a new one and copy the player.js file content to there.
    
-      2. press Ctrl+Enter to run it. 
+      ii. press Ctrl+Enter to run it. 
       
-   Now tips should appear, and in the log the following message should be displayed: "done reading player.js!". 
+   Now tips should appear, and in the log the following message should be displayed: "done reading player.js!". (the tips might appear in the bottom of the page)
    
    * Clicking on the bottons is also possible using the console:
    1. To click on the 'Next' button : write in the console - $("#NextBt").click();
